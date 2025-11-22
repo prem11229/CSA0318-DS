@@ -1,0 +1,18 @@
+#include <stdio.h> 
+int main() { 
+int n, i, j; 
+scanf("%d", &n); 
+char arr[n]; 
+for(i = 0; i < n; i++) { 
+scanf(" %c", &arr[i]); // space before %c to skip whitespace 
+} 
+printf("Repeated characters and their indexes:\n"); 
+for(i = 0; i < n; i++) { 
+for(j = i + 1; j < n; j++) { 
+if(arr[i] == arr[j]) { 
+printf("Character '%c' found at indexes %d and %d\n", arr[i], i, j); 
+} 
+} 
+} 
+return 0; 
+}
