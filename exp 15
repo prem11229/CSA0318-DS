@@ -1,0 +1,65 @@
+#include <stdio.h> 
+int main() { 
+int x, y, z, i, j, k; 
+printf("Enter the dimensions (x y z): "); 
+scanf("%d %d %d", &x, &y, &z); 
+int A[x][y][z], B[x][y][z], sum[x][y][z], diff[x][y][z], prod[x][y][z]; 
+printf("Enter elements of first 3D matrix:\n"); 
+for(i = 0; i < x; i++) 
+for(j = 0; j < y; j++) 
+for(k = 0; k < z; k++) 
+scanf("%d", &A[i][j][k]); 
+printf("Enter elements of second 3D matrix:\n"); 
+for(i = 0; i < x; i++) 
+for(j = 0; j < y; j++) 
+for(k = 0; k < z; k++) 
+scanf("%d", &B[i][j][k]); 
+for(i = 0; i < x; i++) { 
+for(j = 0; j < y; j++) { 
+for(k = 0; k < z; k++) { 
+sum[i][j][k] = A[i][j][k] + B[i][j][k]; 
+diff[i][j][k] = A[i][j][k] - B[i][j][k]; 
+prod[i][j][k] = A[i][j][k] * B[i][j][k]; // element-wise 
+} 
+} 
+} 
+printf("\nAddition of 3D matrices:\n"); 
+for(i = 0; i < x; i++) { 
+for(j = 0; j < y; j++) { 
+for(k = 0; k < z; k++) 
+                printf("%d ", sum[i][j][k]); 
+            printf("\n"); 
+        } 
+        printf("\n"); 
+    } 
+    printf("Subtraction of 3D matrices:\n"); 
+    for(i = 0; i < x; i++) { 
+        for(j = 0; j < y; j++) { 
+            for(k = 0; k < z; k++) 
+                printf("%d ", diff[i][j][k]); 
+            printf("\n"); 
+        } 
+        printf("\n"); 
+    } 
+    printf("Multiplication of 3D matrices (element-wise):\n"); 
+    for(i = 0; i < x; i++) { 
+        for(j = 0; j < y; j++) { 
+            for(k = 0; k < z; k++) 
+                printf("%d ", prod[i][j][k]); 
+            printf("\n"); 
+        } 
+        printf("\n"); 
+    } 
+    printf("Traversal of first 3D matrix:\n"); 
+    for(i = 0; i < x; i++) 
+        for(j = 0; j < y; j++) 
+            for(k = 0; k < z; k++) 
+                printf("%d ", A[i][j][k]); 
+ 
+    printf("\nTraversal of second 3D matrix:\n"); 
+for(i = 0; i < x; i++) 
+for(j = 0; j < y; j++) 
+for(k = 0; k < z; k++) 
+printf("%d ", B[i][j][k]); 
+return 0; 
+}
